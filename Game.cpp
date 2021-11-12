@@ -97,7 +97,7 @@ int main(){
         cout << "Remaining player HP: " << playerHP << endl << "Remaining player MP: " << playerMP << endl << endl;
         cout << "Remaining monster HP: " << monsterHP << endl << "Remaining monster MP: " << monsterMP << endl << endl;
         cout << "============================================" << endl;
-        cout << "What action will the player take?" << endl << "1.Auto Attack 2.Skills 3.Flee" << endl;
+        cout << "What action will the player take?" << endl << "1.AUTO ATTACK 2.SKILLS 3.FLEE" << endl;
         cin >> playerChoice;
         switch (playerChoice){
           case 1: 
