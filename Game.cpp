@@ -90,4 +90,25 @@ int main(){
     }
     cout << "Monster HP: " << monsterHP << endl << "Monster MP: " << monsterMP << endl << "Monster Attack: " << monsterATK << endl << "Monster Defense: " << monsterDEF << endl << "Monster Avoid: " << monsterAVD << endl << "Monster Critical: " << monsterCRT << endl << "============================================" << endl;
     
-      
+    int playerChoice;
+    
+    while (True){
+      if (playerHP > 0 && monsterHP > 0){
+        cout << "Remaining player HP: " << playerHP << endl << "Remaining player MP: " << playerMP << endl << endl;
+        cout << "Remaining monster HP: " << monsterHP << endl << "Remaining monster MP: " << monsterMP << endl << endl;
+        cout << "============================================" << endl;
+        cout << "What action will the player take?" << endl << "1.Auto Attack 2.Skills 3.Flee" << endl;
+        cin >> playerChoice;
+        switch (playerChoice){
+          case 1: 
+            break;
+            
+          case 2:
+            break;
+          
+          case 3:
+            cout << "You cannot flee from the monster!" << endl;
+            continue;
+        }
+        
+       
