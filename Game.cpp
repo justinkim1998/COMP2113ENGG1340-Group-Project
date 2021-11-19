@@ -41,7 +41,7 @@ int main(){
         break;
         
       case 4:
-        cout << "You have chosen the ARCHER." << endl;
+        cout << "You have chosen the SHOOTER." << endl;
         playerHP;
         playerMP=;
         playerATK=;
@@ -306,7 +306,7 @@ int main(){
         
         monsterChoice = rand() % 2;
         
-        if (monsterChoice == 0){                             //monster auto attack
+        if (monsterChoice == 0){                                                //monster auto attack
           monsterDMG = monsterATK - playerDEF;
           AVD = rand() % 101 + playerAVD;
           if (AVD >=100){
@@ -316,22 +316,25 @@ int main(){
             playerHP -= monsterDMG;
             cout << "You have been attacked by the monster! Damage: " << monsterDMG << endl;
           }
+        }
           
         else if (monsterChoice == 1 && monsterMP >= XXX){                       //monster skills
           monsterSkill = rand() % 2;
-          if (monsterSkill == 0){
+          if (monsterSkill == 0){                                               //monster skill 1
             monsterDMG = AAA - playerDEF;
             playerHP -= monsterDMG;
             monsterMP -= XXX;
             cout << "Monster's SKILL 1! Damage: " << monsterDMG << endl;
           }
-          else if (monsterSkill == 1){
+          else if (monsterSkill == 1){                                          //monster skill 2
             monsterDMG = BBB - playerDEF;
             playerHP -= monsterDMG;
             monsterMP -= XXX;
             cout << "Monster's SKILL 2! Damage: " << monsterDMG << endl;
           }
-          
+        }
+      }
+      
       else if (monsterHP <= 0){
         cout << "You have defeated the monster!" << endl << "VICTORY!" << "Game Terminated." << endl;
         system("pause");
@@ -342,4 +345,15 @@ int main(){
         system("pause");
       }
       
-       
+    } 
+    system ("pause") 
+    return 0;
+  }
+} 
+
+// 이거 } 어디 분명 빼먹은거 같은데...
+// 스탯 수치 정하기
+// 스킬 이름 정하기
+// 파일 분리 .h .cpp idk 용현이가 알아서 하겠지..
+// 코멘트
+// readme.md 업데이트   
