@@ -1,42 +1,42 @@
 #include "preGame.h"
 
-void write_file(Status s);
-void read_file(Status &s);
+void write_file(Data s);
+void read_file(Data &s);
 
-void write_file(Status s){
-    ofstream foutStatus("player_status.txt");
-    if (foutStatus.fail()){
+void write_file(Data s){
+    ofstream foutData("player_status.txt");
+    if (foutData.fail()){
         cout << "Error in player_status.txt writing!" << endl;
         exit(1);
     }
-    foutStatus <<  s.playerHP << " " << s.playerMP << endl;
-    foutStatus.close();
+    foutData <<  s.playerHP << " " << s.playerMP << endl;
+    foutData.close();
     
-    ofstream foutStatusM("monster_status.txt");
-    if (foutStatusM.fail()){
+    ofstream foutDataM("monster_status.txt");
+    if (foutDataM.fail()){
         cout << "Error in monster_status.txt writing!" << endl;
         exit(1);
     }
-    foutStatusM << s.monsterHP << " " << s.monsterMP << endl;
-    foutStatusM.close;
+    foutDataM << s.monsterHP << " " << s.monsterMP << endl;
+    foutDataM.close;
 }
 
-void read_file(Status &s){
-    ifstream finStatus("player_status.txt");
-    if (finStatus.fail()){
+void read_file(Data &s){
+    ifstream finData("player_status.txt");
+    if (finData.fail()){
         cout << "You have no data stored! Start from the beginning!" << endl;
     }
     else {
-        finStatus >> s.playerHP >> " " >> s.playerMP;
-        finStatus.close();
+        finData >> s.playerHP >> " " >> s.playerMP;
+        finData.close();
     }
         
-    ifstream finStatusM("monster_status.txt");
-    if (finStatusM.fail()){
+    ifstream finDataM("monster_status.txt");
+    if (finDataM.fail()){
         cout << "You have no data stored! Start from the beginning!" << endl;
     }
     else{
-        finStatus >> s.monsterHP >> " " >> s.monsterMP;
-        finStatusM.close();
+        finDataM >> s.monsterHP >> " " >> s.monsterMP;
+        finDataM.close();
     }
 }
