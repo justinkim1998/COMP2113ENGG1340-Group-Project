@@ -1,94 +1,111 @@
 #include <iostream>
+#include <fstream>
 using namespace std;
 
+struct Data{
+  int HP;       //HP for life
+  int MP;       //MP for skills 
+  int ATK;      //ATK for attack
+  int DEF;      //DEF for defense
+  int AVD;      //AVD for avoid rate
+  int CRT;      //CRT for critical damage 
+  int DMG;      //DMG for damage
+};  
+
 int main(){
-  srand(time(0));                                                                //for random number generating
-  int playerHP, playerMp, playerATK, playerDEF, playerAVD, playerCRT, playerDMG, monsterHP, monsterMP, monsterATK, monsterDEF, monsterDMG;
+  int character;
+  srand(time(0));       //for random number generating
+  
+  Data *player;         //create a dynamic array for the player
+  player = new Data[1];
+  
+  Data *monster;
+  monster = new Data[1];  //create a dynamic array for the monster
   
   cout << "=======WELCOME TO THE FIGHT GAME.=======" << endl << endl;
-  while (True){
+  while (true){
     cout << "Choose a character." << endl << "1.KNIGHT 2.MAGE 3.ASSASSIN 4.SHOOTER" << endl << endl;
     cin >> character;
     switch (character){                                                         //player choice between 1 and 4, different characters
       case 1:                                                                   //if player chooses char 1
         cout << "You have chosen the KNIGHT." << endl;
-        playerHP=500;
-        playerMP=100;
-        playerATK=50;
-        playerDEF=20;
-        playerAVD=10;
-        playerCRT=30;
+        player[0].HP=500;
+        player[0].MP=100;
+        player[0].ATK=50;
+        player[0].DEF=20;
+        player[0].AVD=10;
+        player[0].CRT=30;
         break;
         
       case 2:                                                                   //if player chooses char 2
         cout << "You have chosen the MAGE." << endl;
-        playerHP=350;
-        playerMP=200;
-        playerATK=20;
-        playerDEF=10;
-        playerAVD=10;
-        playerCRT=15;
+        player[0].HP=350;
+        player[0].MP=200;
+        player[0].ATK=20;
+        player[0].DEF=10;
+        player[0].AVD=10;
+        player[0].CRT=15;
         break;
         
       case 3:                                                                   //if player chooses char 3
         cout << "You have chosen the ASSASSIN." << endl;
-        playerHP=;
-        playerMP=;
-        playerATK=;
-        playerDEF=;
-        playerAVD=;
-        playerCRT=;
+        player[0].HP=;
+        player[0].MP=;
+        player[0].ATK=;
+        player[0].DEF=;
+        player[0].AVD=;
+        player[0].CRT=;
         break;
         
       case 4:                                                                   //if player chooses char 4
         cout << "You have chosen the SHOOTER." << endl;
-        playerHP;
-        playerMP=;
-        playerATK=;
-        playerDEF=;
-        playerAVD=;
-        playerCRT=;
+        player[0].HP=;
+        player[0].MP=;
+        player[0].ATK=;
+        player[0].DEF=;
+        player[0].AVD=;
+        player[0].CRT=;
         break;
         
       default:
         cout << "Invalid choice. Please choose again." << endl;
         continue;
     }
-    cout << "HP: " << playerHP << endl << "MP: " << playerMP << endl << "Attack: " << playerATK << endl << "Defense: " << playerDEF << endl << "Avoid: " << playerAVD << endl << "Critical: " << playerCRT << endl << "============================================" << endl;
+    cout << "HP: " << player[0].HP << endl << "MP: " << player[0].MP << endl << "Attack: " << player[0].ATK << endl << "Defense: " << player[0].DEF << endl << "Avoid: " << player[0].AVD << endl << "Critical: " << player[0].CRT << endl << "============================================" << endl;
     
-    int monster = rand() % 3 + 1;                                               //generated random number between 1 and 3 to decide which monster will appear
-    switch (monster){
+    int choice = rand() % 3 + 1;                                               //generated random number between 1 and 3 to decide which monster will appear
+    switch (choice){
       case 1:                                                                   //monster 1 appears if random number generated is 1
         cout << "A wild ZOMBIE has appeared!" << endl;
-        monsterHP=;
-        monsterMP=;
-        monsterATK=;
-        monsterDEF=;
-        monsterAVD=;
-        monsterCRT=;
+        monster[0].HP=;
+        monster[0].MP=;
+        monster[0].ATK=;
+        monster[0].DEF=;
+        monster[0].AVD=;
+        monster[0].CRT=;
         break;
         
       case 2:                                                                   //monster 2 appears if random number generated is 2
         cout << "A wild XXX has appeared!" << endl;
-        monsterHP=;
-        monsterMP=;
-        monsterATK=;
-        monsterDEF=;
-        monsterAVD=;
-        monsterCRT=;
+        monster[0].HP=;
+        monster[0].MP=;
+        monster[0].ATK=;
+        monster[0].DEF=;
+        monster[0].AVD=;
+        monster[0].CRT=;
         break;
         
       case 3:                                                                   //monster 3 appears if random number generated is 3
         cout << "A wild XXX has appeared!" << endl;
-        monsterHP=;
-        monsterMP=;
-        monsterATK=;
-        monsterDEF=;
-        monsterAVD=;
-        monsterCRT=;
+        monster[0].HP=;
+        monster[0].MP=;
+        monster[0].ATK=;
+        monster[0].DEF=;
+        monster[0].AVD=;
+        monster[0].CRT=;
         break;
     }
-    cout << "Monster HP: " << monsterHP << endl << "Monster MP: " << monsterMP << endl << "Monster Attack: " << monsterATK << endl << "Monster Defense: " << monsterDEF << endl << "Monster Avoid: " << monsterAVD << endl << "Monster Critical: " << monsterCRT << endl << "============================================" << endl;
+    cout << "Monster HP: " << monster[0].HP << endl << "Monster MP: " << monster[0].MP << endl << "Monster Attack: " << monster[0].ATK << endl << "Monster Defense: " << monster[0].DEF << endl << "Monster Avoid: " << monster[0].AVD << endl << "Monster Critical: " << monster[0].CRT << endl << "============================================" << endl;
     
     int playerChoice;
     int playerSkillChoice;
@@ -350,44 +367,6 @@ int main(){
     return 0;
   }
 } 
-
-
-
-
-//save&load file
-void write_file(Status &s){
-    ofstream foutStatus("player_status.txt");
-    if (foutStatus.fail()){
-        cout << "Error in player_status.txt writing!" << endl;
-        exit(1);
-    }
-    foutStatus <<  s.playerHP << " " << s.playerMP << endl;
-    foutStatus.close();
-    
-    ofstream foutStatusM("monster_status.txt");
-    if (foutStatusM.fail()){
-        cout << "Error in monster_status.txt writing!" << endl;
-        exit(1);
-    }
-    foutStatusM << s.monsterHP << " " << s.monsterMP << endl;
-    foutStatusM.close
-
-void read_file(Status &s){
-    ifstream finStatus("player_status.txt");
-    if (finStatus.fail()){
-        cout << "You have no data stored! Start from the beginning!" << endl;
-    }
-    else {
-        finStatus >> s.playerHP >> " " >> s.playerMP;
-        finStatus.close();
-        
-    ifstream finStatusM("monster_status.txt");
-    if (finStatusM.fail()){
-        cout << "You have no data stored! Start from the beginning!" << endl;
-    }
-    else{
-        finStatus >> s.monsterHP >> " " >> s.monsterMP;
-        finStatusM.close();
 
 // 이거 } 어디 분명 빼먹은거 같은데..
 // declare 안 한 variables 분명 있을듯..
