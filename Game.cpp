@@ -118,38 +118,17 @@ int main(){
         
         cin >> playerChoice;
         
-        player_action(character, playerChoice, player, monster);
+        player_action(character, playerChoice, player, monster);    //calls the function to choose an action for the player
         
-        monsterChoice = rand() % 2;                                             //generates random number between 0 and 1 to decide which action the monster will take, 0 auto attack and 1 use skills
+        monsterChoice = rand() % 2;                      //generates random number between 0 and 1 to decide which action the monster will take, 0 auto attack and 1 use skills
+        monster_action(monsterChoice,player,monster);   //calls the function to choose an action for the monster
+     
         
-        if (monsterChoice == 0){                                                //monster auto attack if random number generated is 0
-          monsterDMG = monsterATK - playerDEF;
-          AVD = rand() % 101 + playerAVD;                                       //generates random number between 0 and 100, if add up with playerAVD greater than 100, monster attack miss
-          if (AVD >=100){
-            cout << "Monster attack miss!" << endl;
-          }
-          else {
-            playerHP -= monsterDMG;
-            cout << "You have been attacked by the monster! Damage: " << monsterDMG << endl;
-          }
-        }
           
-        else if (monsterChoice == 1 && monsterMP >= XXX){                       //monster uses skills if random number generated is 1
-          monsterSkill = rand() % 2;                                            //generates random number between 0 and 1 to decide which skill the monster will use, 0 'skill 1' and 1 'skill 2'
-          if (monsterSkill == 0){                                               //monster skill 1 if random number generated is 0
-            monsterDMG = AAA - playerDEF;
-            playerHP -= monsterDMG;
-            monsterMP -= XXX;
-            cout << "Monster's SKILL 1! Damage: " << monsterDMG << endl;
-          }
-          else if (monsterSkill == 1){                                          //monster skill 2 if random number generated is 1
-            monsterDMG = BBB - playerDEF;
-            playerHP -= monsterDMG;
-            monsterMP -= XXX;
-            cout << "Monster's SKILL 2! Damage: " << monsterDMG << endl;
-          }
-        }
-      }
+       
+          
+        
+     
       
       else if (monsterHP <= 0){                                                 //monster hp below 0
         cout << "You have defeated the monster!" << endl << "VICTORY!" << "Game Terminated." << endl;
