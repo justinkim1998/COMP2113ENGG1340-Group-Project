@@ -3,75 +3,75 @@
 using namespace std;
 
 struct Data{
-  int HP;       //HP for life
-  int MP;       //MP for skills 
-  int ATK;      //ATK for attack
-  int DEF;      //DEF for defense
-  int AVD;      //AVD for avoid rate
-  int CRT;      //CRT for critical damage 
-  int DMG;      //DMG for damage
+    int HP;       //HP for life
+    int MP;       //MP for skills 
+    int ATK;      //ATK for attack
+    int DEF;      //DEF for defense
+    int AVD;      //AVD for avoid rate
+    int CRT;      //CRT for critical damage 
+    int DMG;      //DMG for damage
 };  
 
 int main(){
-  int character;
-  srand(time(0));       //for random number generating
+    int character;
+    srand(time(0));       //for random number generating
   
-  Data *player;         //create a dynamic array for the player
-  player = new Data[1];
+    Data *player;         //create a dynamic array for the player
+    player = new Data[1];
   
-  Data *monster;
-  monster = new Data[1];  //create a dynamic array for the monster
+    Data *monster;
+    monster = new Data[1];  //create a dynamic array for the monster
   
-  cout << "=======WELCOME TO THE FIGHT GAME.=======" << endl << endl;
-  while (true){
-    cout << "Choose a character." << endl << "1.KNIGHT 2.MAGE 3.ASSASSIN 4.SHOOTER" << endl << endl;
-    cin >> character;
-    switch (character){                                                         //player choice between 1 and 4, different characters
-      case 1:                                                                   //if player chooses char 1
-        cout << "You have chosen the KNIGHT." << endl;
-        player[0].HP=500;
-        player[0].MP=100;
-        player[0].ATK=50;
-        player[0].DEF=20;
-        player[0].AVD=10;
-        player[0].CRT=30;
-        break;
+    cout << "=======WELCOME TO THE FIGHT GAME.=======" << endl << endl;
+    while (true){
+        cout << "Choose a character." << endl << "1.KNIGHT 2.MAGE 3.ASSASSIN 4.SHOOTER" << endl << endl;
+        cin >> character;
+        switch (character){                                                         //player choice between 1 and 4, different characters
+            case 1:                                                                   //if player chooses char 1
+              cout << "You have chosen the KNIGHT." << endl;
+              player[0].HP=500;
+              player[0].MP=100;
+              player[0].ATK=50;
+              player[0].DEF=20;
+              player[0].AVD=10;
+              player[0].CRT=30;
+              break;
         
-      case 2:                                                                   //if player chooses char 2
-        cout << "You have chosen the MAGE." << endl;
-        player[0].HP=350;
-        player[0].MP=200;
-        player[0].ATK=20;
-        player[0].DEF=10;
-        player[0].AVD=10;
-        player[0].CRT=15;
-        break;
+            case 2:                                                                   //if player chooses char 2
+              cout << "You have chosen the MAGE." << endl;
+              player[0].HP=350;
+              player[0].MP=200;
+              player[0].ATK=20;
+              player[0].DEF=10;
+              player[0].AVD=10;
+              player[0].CRT=15;
+              break;
         
-      case 3:                                                                   //if player chooses char 3
-        cout << "You have chosen the ASSASSIN." << endl;
-        player[0].HP=;
-        player[0].MP=;
-        player[0].ATK=;
-        player[0].DEF=;
-        player[0].AVD=;
-        player[0].CRT=;
-        break;
+            case 3:                                                                   //if player chooses char 3
+              cout << "You have chosen the ASSASSIN." << endl;
+              player[0].HP=;
+              player[0].MP=;
+              player[0].ATK=;
+              player[0].DEF=;
+              player[0].AVD=;
+              player[0].CRT=;
+              break;
         
-      case 4:                                                                   //if player chooses char 4
-        cout << "You have chosen the SHOOTER." << endl;
-        player[0].HP=;
-        player[0].MP=;
-        player[0].ATK=;
-        player[0].DEF=;
-        player[0].AVD=;
-        player[0].CRT=;
-        break;
+            case 4:                                                                   //if player chooses char 4
+              cout << "You have chosen the SHOOTER." << endl;
+              player[0].HP=;
+              player[0].MP=;
+              player[0].ATK=;
+              player[0].DEF=;
+              player[0].AVD=;
+              player[0].CRT=;
+              break;
         
-      default:
-        cout << "Invalid choice. Please choose again." << endl;
-        continue;
+            default:
+              cout << "Invalid choice. Please choose again." << endl;
+              continue;
+        }
     }
-  }
   
     cout << "HP: " << player[0].HP << endl << "MP: " << player[0].MP << endl << "Attack: " << player[0].ATK << endl << "Defense: " << player[0].DEF << endl << "Avoid: " << player[0].AVD << endl << "Critical: " << player[0].CRT << endl << "============================================" << endl;
     
@@ -142,3 +142,12 @@ int main(){
     return 0;
  
 } 
+
+// 이거 } 어디 분명 빼먹은거 같은데..
+// declare 안 한 variables 분명 있을듯..
+// 스탯 수치 정하기
+// 스킬 이름 정하기
+// 파일 분리 .h .cpp makefile 아몰랑 용현이가 알아서 하겠지.. (req.5)
+// File input/output (loading/saving game status) 아몰랑 용현이가 알아서 하곘지..(req.2,4)
+// readme.md 업데이트
+// video demonstration
