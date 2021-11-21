@@ -110,13 +110,16 @@ int main(){
     int playerChoice;
     int playerSkillChoice;
     
-    while (True){
-      if (playerHP > 0 && monsterHP > 0){                                       //while both player and monster hp more than 0
+   while (playerHP > 0 && monsterHP > 0){
         cout << "Remaining player HP: " << playerHP << endl << "Remaining player MP: " << playerMP << endl << endl;
         cout << "Remaining monster HP: " << monsterHP << endl << "Remaining monster MP: " << monsterMP << endl << endl;
         cout << "============================================" << endl;
         cout << "What action will the player take?" << endl << "1.AUTO ATTACK 2.SKILLS 3.FLEE" << endl;
+        
         cin >> playerChoice;
+        
+        player_action(playerChoice, player)
+          
         switch (playerChoice){                                                  //player choice between 1 and 3, different actions
           case 1:                                                               //if the player chooses action 1: auto attack
             CRT = rand % 101 + playerCRT;                                       //generates random number from 0 to 100, if add up with playerCRT greater than 100, then critical hit
