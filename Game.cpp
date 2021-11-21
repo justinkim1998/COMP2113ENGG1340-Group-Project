@@ -361,7 +361,7 @@ void write_file(Status &s){
         cout << "Error in player_status.txt writing!" << endl;
         exit(1);
     }
-    foutStatus <<  s.playerHP << " " << s.playerMP << " " << endl;
+    foutStatus <<  s.playerHP << " " << s.playerMP << endl;
     foutStatus.close();
     
     ofstream foutStatusM("monster_status.txt");
@@ -369,7 +369,7 @@ void write_file(Status &s){
         cout << "Error in monster_status.txt writing!" << endl;
         exit(1);
     }
-    foutStatusM << s.monsterHP << " " << s.monsterMP << " " << endl;
+    foutStatusM << s.monsterHP << " " << s.monsterMP << endl;
     foutStatusM.close
 
 void read_file(Status &s){
