@@ -118,7 +118,7 @@ int main(){
         
         cin >> playerChoice;
         
-        player_action(character, playerChoice, player);
+        player_action(character, playerChoice, player, monster);
         
         monsterChoice = rand() % 2;                                             //generates random number between 0 and 1 to decide which action the monster will take, 0 auto attack and 1 use skills
         
