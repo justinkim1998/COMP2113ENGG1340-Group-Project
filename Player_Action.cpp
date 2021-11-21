@@ -2,7 +2,7 @@
 #include <fstream>
 using namespace std;
 
-void player_action(character, playerChoice, Data player[]){
+void player_action(character, playerChoice, Data player[], Data monster[]){
      int playerSkillChoice = 0;
      
      switch (playerChoice){                                                  //player choice between 1 and 3, different actions
