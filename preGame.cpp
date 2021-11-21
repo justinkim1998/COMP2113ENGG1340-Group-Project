@@ -3,7 +3,7 @@
 void write_file(Status s);
 void read_file(Status &s);
 
-void write_file(Status &s){
+void write_file(Status s){
     ofstream foutStatus("player_status.txt");
     if (foutStatus.fail()){
         cout << "Error in player_status.txt writing!" << endl;
