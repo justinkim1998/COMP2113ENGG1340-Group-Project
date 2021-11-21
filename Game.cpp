@@ -13,7 +13,7 @@ struct Data{
 };  
 
 int main(){
-    int character;
+    int character = 0, trial = 1;
     srand(time(0));       //for random number generating
   
     Data *player;         //create a dynamic array for the player
@@ -118,14 +118,31 @@ int main(){
         cout << "============================================" << endl;
         cout << "What action will the player take?" << endl << "1.AUTO ATTACK 2.SKILLS 3.FLEE" << endl;
         
+        ofstream fout;
+        fout.open("Game_Status.txt",ios::app);
+        
+        if (fout.fail())        //check if there is no error in the file, exit if so
+        {
+         cout << "File does not exist" << endl;
+         exit(1);
+        }
+        
         cin >> playerChoice;
         
         player_action(character, playerChoice, player, monster);    //calls the function to choose an action for the player
         
         monsterChoice = rand() % 2;                      //generates random number between 0 and 1 to decide which action the monster will take, 0 auto attack and 1 use skills
         monster_action(monsterChoice,player,monster);   //calls the function to choose an action for the monster
+        
+        fout << "Trial: " << trial << endl;
+        fout << "Player HP: " << player[0].HP << " Player MP: " << player[0].MP << endl;
+        fout << "Monster HP: " << monster[0].HP << " Monster MP: " << monster[0].MP << endl;
+            
+        trial += 1;
     }
-   
+    
+    fout.close();       //close file
+    
     if (monster[0].HP <= 0)
     {                                                 //monster hp below 0
         cout << "You have defeated the monster!" << endl << "VICTORY!" << "Game Terminated." << end;
