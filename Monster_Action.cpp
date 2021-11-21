@@ -2,7 +2,7 @@
 #include <fstream>
 using namespace std;
 
-void player_action(character, monsterChoice, Data monster[], Data player[]){
+void monster_action(character, monsterChoice, Data monster[], Data player[]){
     
     if (monsterChoice == 0)   //monster auto attack if random number generated is 0
     {                                                
