@@ -71,6 +71,8 @@ int main(){
         cout << "Invalid choice. Please choose again." << endl;
         continue;
     }
+  }
+  
     cout << "HP: " << player[0].HP << endl << "MP: " << player[0].MP << endl << "Attack: " << player[0].ATK << endl << "Defense: " << player[0].DEF << endl << "Avoid: " << player[0].AVD << endl << "Critical: " << player[0].CRT << endl << "============================================" << endl;
     
     int choice = rand() % 3 + 1;                                               //generated random number between 1 and 3 to decide which monster will appear
@@ -110,7 +112,7 @@ int main(){
     int playerChoice;
     int playerSkillChoice;
     
-   while (playerHP > 0 && monsterHP > 0){
+    while (playerHP > 0 && monsterHP > 0){
         cout << "Remaining player HP: " << playerHP << endl << "Remaining player MP: " << playerMP << endl << endl;
         cout << "Remaining monster HP: " << monsterHP << endl << "Remaining monster MP: " << monsterMP << endl << endl;
         cout << "============================================" << endl;
@@ -122,35 +124,21 @@ int main(){
         
         monsterChoice = rand() % 2;                      //generates random number between 0 and 1 to decide which action the monster will take, 0 auto attack and 1 use skills
         monster_action(monsterChoice,player,monster);   //calls the function to choose an action for the monster
-     
+    }
+   
+    if (monster[0].HP <= 0)
+    {                                                 //monster hp below 0
+        cout << "You have defeated the monster!" << endl << "VICTORY!" << "Game Terminated." << end;
+    }
         
-          
-       
-          
-        
-     
-      
-      else if (monsterHP <= 0){                                                 //monster hp below 0
-        cout << "You have defeated the monster!" << endl << "VICTORY!" << "Game Terminated." << endl;
-        system("pause");
-      }
-        
-      else if (playerHP <= 0){                                                  //player hp below 0
+    else if (player[0].HP <= 0)
+    {                                                  //player hp below 0
         cout << "You have been defeated by the monster!" << endl << "DEFEAT!" << "Game Terminated." << endl;
-        system("pause");
-      }
+    }
       
-    } 
-    system ("pause") 
+    delete [] player;       //use delete to free the dynamic array
+    delete [] monster;
+    
     return 0;
-  }
+ 
 } 
-
-// 이거 } 어디 분명 빼먹은거 같은데..
-// declare 안 한 variables 분명 있을듯..
-// 스탯 수치 정하기
-// 스킬 이름 정하기
-// 파일 분리 .h .cpp makefile 아몰랑 용현이가 알아서 하겠지.. (req.5)
-// File input/output (loading/saving game status) 아몰랑 용현이가 알아서 하곘지..(req.2,4)
-// readme.md 업데이트
-// video demonstration
