@@ -119,10 +119,9 @@ int main(){
         cout << "What action will the player take?" << endl << "1.AUTO ATTACK 2.SKILLS 3.FLEE" << endl;
         
         ofstream fout;
-        fout.open("Game_Status.txt",ios::app);
+        fout.open("Game_Status.txt", ios::app);
         
-        if (fout.fail())        //check if there is no error in the file, exit if so
-        {
+        if (fout.fail()){        //check if there is no error in the file, exit if so
          cout << "File does not exist" << endl;
          exit(1);
         }
@@ -135,22 +134,21 @@ int main(){
         monster_action(monsterChoice,player,monster);   //calls the function to choose an action for the monster
         
         fout << "Trial: " << trial << endl;
-        fout << "Player HP: " << player[0].HP << " Player MP: " << player[0].MP << endl;
-        fout << "Monster HP: " << monster[0].HP << " Monster MP: " << monster[0].MP << endl;
+        fout << "Player HP: " << player[0].HP << " " << " Player MP: " << player[0].MP << endl;
+        fout << "Monster HP: " << monster[0].HP << " " << " Monster MP: " << monster[0].MP << endl;
             
         trial += 1;
+        
+        fout.close();    //close file
     }
     
-    fout.close();       //close file
     
-    if (monster[0].HP <= 0)
-    {                                                 //monster hp below 0
-        cout << "You have defeated the monster!" << endl << "VICTORY!" << "Game Terminated." << end;
+    if (monster[0].HP <= 0){                                                      //monster hp below 0
+        cout << "You have defeated the monster!" << endl << "VICTORY!" << endl << "Game Terminated." << endl;
     }
         
-    else if (player[0].HP <= 0)
-    {                                                  //player hp below 0
-        cout << "You have been defeated by the monster!" << endl << "DEFEAT!" << "Game Terminated." << endl;
+    else if (player[0].HP <= 0){                                                  //player hp below 0
+        cout << "You have been defeated by the monster!" << endl << "DEFEAT!" << endl << "Game Terminated." << endl;
     }
       
     delete [] player;       //use delete to free the dynamic array
