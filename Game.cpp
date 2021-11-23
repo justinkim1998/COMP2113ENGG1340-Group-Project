@@ -3,31 +3,31 @@
 using namespace std;
 
 struct Data{
-    int HP;       //HP for life
-    int MP;       //MP for skills 
-    int ATK;      //ATK for attack
-    int DEF;      //DEF for defense
-    int AVD;      //AVD for avoid rate
-    int CRT;      //CRT for critical damage 
-    int DMG;      //DMG for damage
+    int HP;                                                                          //HP for life
+    int MP;                                                                          //MP for skills 
+    int ATK;                                                                         //ATK for attack
+    int DEF;                                                                         //DEF for defense
+    int AVD;                                                                         //AVD for avoid rate
+    int CRT;                                                                         //CRT for critical damage 
+    int DMG;                                                                         //DMG for damage
 };  
 
 int main(){
     int character = 0, trial = 1;
-    srand(time(0));       //for random number generating
+    srand(time(0));                                                                  //for random number generating
   
-    Data *player;         //create a dynamic array for the player
+    Data *player;                                                                    //create a dynamic array for the player
     player = new Data[1];
   
     Data *monster;
-    monster = new Data[1];  //create a dynamic array for the monster
+    monster = new Data[1];                                                           //create a dynamic array for the monster
   
     cout << "=======WELCOME TO THE FIGHT GAME.=======" << endl << endl;
     while (true){
         cout << "Choose a character." << endl << "1.KNIGHT 2.MAGE 3.ASSASSIN 4.SHOOTER" << endl << endl;
         cin >> character;
-        switch (character){                                                         //player choice between 1 and 4, different characters
-            case 1:                                                                   //if player chooses char 1
+        switch (character){                                                          //player choice between 1 and 4, different characters
+            case 1:                                                                  //if player chooses char 1
               cout << "You have chosen the KNIGHT." << endl;
               player[0].HP=500;
               player[0].MP=100;
@@ -37,7 +37,7 @@ int main(){
               player[0].CRT=30;
               break;
         
-            case 2:                                                                   //if player chooses char 2
+            case 2:                                                                  //if player chooses char 2
               cout << "You have chosen the MAGE." << endl;
               player[0].HP=250;
               player[0].MP=200;
@@ -47,7 +47,7 @@ int main(){
               player[0].CRT=20;
               break;
         
-            case 3:                                                                   //if player chooses char 3
+            case 3:                                                                  //if player chooses char 3
               cout << "You have chosen the ASSASSIN." << endl;
               player[0].HP=350;
               player[0].MP=120;
@@ -57,7 +57,7 @@ int main(){
               player[0].CRT=25;
               break;
         
-            case 4:                                                                   //if player chooses char 4
+            case 4:                                                                  //if player chooses char 4
               cout << "You have chosen the SHOOTER." << endl;
               player[0].HP=300;
               player[0].MP=130;
@@ -75,9 +75,9 @@ int main(){
   
     cout << "HP: " << player[0].HP << endl << "MP: " << player[0].MP << endl << "Attack: " << player[0].ATK << endl << "Defense: " << player[0].DEF << endl << "Avoid: " << player[0].AVD << endl << "Critical: " << player[0].CRT << endl << "============================================" << endl;
     
-    int choice = rand() % 3 + 1;                                               //generated random number between 1 and 3 to decide which monster will appear
+    int choice = rand() % 3 + 1;                                                    //generated random number between 1 and 3 to decide which monster will appear
     switch (choice){
-      case 1:                                                                   //monster 1 appears if random number generated is 1
+      case 1:                                                                       //monster 1 appears if random number generated is 1
         cout << "A wild ZOMBIE has appeared!" << endl;
         monster[0].HP= 450;
         monster[0].MP= 100;
@@ -85,7 +85,7 @@ int main(){
         monster[0].DEF= 20;
         break;
         
-      case 2:                                                                   //monster 2 appears if random number generated is 2
+      case 2:                                                                       //monster 2 appears if random number generated is 2
         cout << "A wild GOLEM has appeared!" << endl;
         monster[0].HP= 470;
         monster[0].MP= 20;
@@ -93,7 +93,7 @@ int main(){
         monster[0].DEF= 30;
         break;
         
-      case 3:                                                                   //monster 3 appears if random number generated is 3
+      case 3:                                                                       //monster 3 appears if random number generated is 3
         cout << "A wild OAK has appeared!" << endl;
         monster[0].HP= 430;
         monster[0].MP= 60;
@@ -115,17 +115,17 @@ int main(){
         ofstream fout;
         fout.open("Game_Status.txt", ios::app);
         
-        if (fout.fail()){        //check if there is no error in the file, exit if so
+        if (fout.fail()){                                                          //check if there is no error in the file, exit if so
          cout << "File does not exist" << endl;
          exit(1);
         }
         
         cin >> playerChoice;
         
-        player_action(character, playerChoice, player, monster);    //calls the function to choose an action for the player
+        player_action(character, playerChoice, player, monster);                   //calls the function to choose an action for the player
         
-        monsterChoice = rand() % 2;                      //generates random number between 0 and 1 to decide which action the monster will take, 0 auto attack and 1 use skills
-        monster_action(monsterChoice,player,monster);   //calls the function to choose an action for the monster
+        monsterChoice = rand() % 2;                                                //generates random number between 0 and 1 to decide which action the monster will take, 0 auto attack and 1 use skills
+        monster_action(monsterChoice,player,monster);                              //calls the function to choose an action for the monster
         
         fout << "Trial: " << trial << endl;
         fout << "Player HP: " << player[0].HP << " " << " Player MP: " << player[0].MP << endl;
@@ -145,18 +145,14 @@ int main(){
         cout << "You have been defeated by the monster!" << endl << "DEFEAT!" << endl << "Game Terminated." << endl;
     }
       
-    delete [] player;       //use delete to free the dynamic array
+    delete [] player;                                                             //use delete to free the dynamic array
     delete [] monster;
     
     return 0;
  
 } 
 
-// 이거 } 어디 분명 빼먹은거 같은데..
-// declare 안 한 variables 분명 있을듯..
-// 스탯 수치 정하기
-// 스킬 이름 정하기
 // 파일 분리 .h .cpp makefile 아몰랑 용현이가 알아서 하겠지.. (req.5)
 // File input/output (loading/saving game status) 아몰랑 용현이가 알아서 하곘지..(req.2,4)
-// readme.md 업데이트
+// readme.md 업데이트 Compilation and execution instructions ('Quick start' of the game)
 // video demonstration
