@@ -29,17 +29,17 @@ void player_action(character, playerChoice, Data player[], Data monster[]){
             cout << "Which skill will you use?" << endl;
             
             if (character == 1){                                                //if the player chooses character 1
-              cout << "1. ALPHA STRIKE (Damage: AAA, Mana Required: XXX) / 2. JUDGMENT (Damage: BBB, Mana Required: YYY) / 3. MEDITATE (HP +CCC, Mana Required: ZZZ)" << endl;
+              cout << "1. ALPHA STRIKE (Damage: 90, Mana Required: 40) / 2. JUDGMENT (Damage: 70, Mana Required: 20) / 3. MEDITATE (HP +30, Mana Required: 20)" << endl;
               cin >> playerSkillChoice;
               
               switch (playerSkillChoice)
               {                                       //player choice between 1 and 3, different skills used
                 case 1:                                                         //if the player chooses skill 1 of char 1
-                  if (player[0].MP >= XXX)
+                  if (player[0].MP >= 40)
                   {
-                    player[0].DMG = AAA - monster[0].DEF;
+                    player[0].DMG = 90 - monster[0].DEF;
                     monster[0].HP -= player[0].DMG;
-                    player[0].MP -= XXX;
+                    player[0].MP -= 40;
                     cout << "Player's ALPHA STRIKE! Damage: " << player[0].DMG << endl;
                   }
                   
@@ -50,11 +50,11 @@ void player_action(character, playerChoice, Data player[], Data monster[]){
                   break;
                   
                 case 2:                                                         //if the player chooses skill 2 of char 1
-                  if (playerMP >= YYY)
+                  if (playerMP >= 20)
                   {
-                    player[0].DMG = BBB - monster[0].DEF;
+                    player[0].DMG = 70 - monster[0].DEF;
                     monster[0].HP -= player[0].DMG;
-                    player[0].MP -= YYY;
+                    player[0].MP -= 20;
                     cout << "Player's JUDGMENT! Damage: " << player[0].DMG << endl;
                   }
                   else 
@@ -64,11 +64,11 @@ void player_action(character, playerChoice, Data player[], Data monster[]){
                   break;
                   
                 case 3:                                                         //if the player chooses skill 3 of char 1
-                  if (playerMP >= ZZZ)
+                  if (playerMP >= 20)
                   {
-                    player[0].HP += CCC;
-                    player[0].MP -= ZZZ;
-                    cout << "Player's MEDITATE! HP + " << CCC << endl;
+                    player[0].HP += 30;
+                    player[0].MP -= 20;
+                    cout << "Player's MEDITATE! HP + " << player[0].HP << endl;
                   }
                   else 
                   {
@@ -85,16 +85,16 @@ void player_action(character, playerChoice, Data player[], Data monster[]){
             
             
             else if (character == 2){                                           //if the player chooses character 2
-              cout << "1. ETHEREAL CHAINS (Damage: AAA, Mana Required: XXX) / 2. DISTORTION (Damage: BBB, Mana Required: YYY) / 3. SHIELD (HP +CCC, Mana Required: ZZZ)" << endl;
+              cout << "1. ETHEREAL CHAINS (Damage: 80, Mana Required: 50) / 2. DISTORTION (Damage: 40, Mana Required: 30) / 3. SHIELD (HP +40, Mana Required: 20)" << endl;
               cin >> playerSkillChoice;
               
               switch (playerSkillChoice){                                       //player choice between 1 and 3, different skills used
                 case 1:                                                         //if the player chooses skill 1 of char 1
-                  if (playerMP >= XXX)
+                  if (playerMP >= 50)
                   {
-                    player[0].DMG = AAA - monster[0].DEF;
+                    player[0].DMG = 80 - monster[0].DEF;
                     monster[0].HP -= player[0].DMG;
-                    player[0].MP -= XXX;
+                    player[0].MP -= 50;
                     cout << "Player's ETHEREAL CHAINS! Damage: " << player[0].DMG << endl;
                   }
                   
@@ -105,11 +105,11 @@ void player_action(character, playerChoice, Data player[], Data monster[]){
                   break;
                   
                 case 2:                                                         //if the player chooses skill 2 of char 2
-                  if (playerMP >= YYY)
+                  if (playerMP >= 30)
                   {
-                    player[0].DMG = BBB - monster[0].DEF;
+                    player[0].DMG = 40 - monster[0].DEF;
                     monster[0].HP -= player[0].DMG;
-                    player[0].MP -= YYY;
+                    player[0].MP -= 30;
                     cout << "Player's DISTORTION! Damage: " << player[0].DMG << endl;
                   }
                   else 
@@ -119,10 +119,10 @@ void player_action(character, playerChoice, Data player[], Data monster[]){
                   break;
                   
                 case 3:                                                         //if the player chooses skill 3 of char 2
-                  if (playerMP >= ZZZ)
+                  if (playerMP >= 20)
                   {
-                    player[0].HP += CCC;
-                    player[0].MP -= ZZZ;
+                    player[0].HP += 40;
+                    player[0].MP -= 20;
                     cout << "Player's SHIELD! HP + " << CCC << endl;
                   }
                   else {
@@ -139,16 +139,16 @@ void player_action(character, playerChoice, Data player[], Data monster[]){
             
             
             else if (character == 3){                                           //if the player chooses character 3
-              cout << "1. RAZOR SHURIKEN (Damage: AAA, Mana Required: XXX) / 2. SHADOW SLASH (Damage: BBB, Mana Required: YYY) / 3. DODGE (HP +CCC, Mana Required: ZZZ)" << endl;
+              cout << "1. RAZOR SHURIKEN (Damage: 60, Mana Required: 30) / 2. SHADOW SLASH (Damage: 50, Mana Required: 20) / 3. DODGE (HP +30, Mana Required: 20)" << endl;
               cin >> playerSkillChoice;
               
               switch (playerSkillChoice){                                       //player choice between 1 and 3, different skills used
                 case 1:                                                         //if the player chooses skill 1 of char 3
-                  if (player[0].MP >= XXX)
+                  if (player[0].MP >= 30)
                   {
-                    player[0].DMG = AAA - monster[0].DEF;
+                    player[0].DMG = 60 - monster[0].DEF;
                     monster[0].HP -= player[0].DMG;
-                    player[0].MP -= XXX;
+                    player[0].MP -= 30;
                     cout << "Player's RAZOR SHURIKEN! Damage: " << player[0].DMG << endl;
                   }
                   else
@@ -158,11 +158,11 @@ void player_action(character, playerChoice, Data player[], Data monster[]){
                   break;
                   
                 case 2:                                                         //if the player chooses skill 2 of char 3
-                  if (player[0].MP >= YYY)
+                  if (player[0].MP >= 20)
                   {
-                    player[0].DMG = BBB - monster[0].DEF;
+                    player[0].DMG = 50 - monster[0].DEF;
                     monster[0].HP -= player[0].DMG;
-                    player[0].MP -= YYY;
+                    player[0].MP -= 20;
                     cout << "Player's SHADOW SLASH! Damage: " << player[0].DMG << endl;
                   }
                   else 
@@ -172,11 +172,11 @@ void player_action(character, playerChoice, Data player[], Data monster[]){
                   break;
                   
                 case 3:                                                         //if the player chooses skill 3 of char 3
-                   if (player[0].MP >= ZZZ)
+                   if (player[0].MP >= 20)
                    {
-                    player[0].HP += CCC;
-                    player[0].MP -= ZZZ;
-                    cout << "Player's DODGE! HP + " << CCC << endl;
+                    player[0].HP += 30;
+                    player[0].MP -= 20;
+                    cout << "Player's DODGE! HP + " << player[0].HP << endl;
                   }
                   else 
                   {
