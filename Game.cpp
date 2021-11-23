@@ -79,32 +79,26 @@ int main(){
     switch (choice){
       case 1:                                                                   //monster 1 appears if random number generated is 1
         cout << "A wild ZOMBIE has appeared!" << endl;
-        monster[0].HP=;
-        monster[0].MP=;
-        monster[0].ATK=;
-        monster[0].DEF=;
-        monster[0].AVD=;
-        monster[0].CRT=;
+        monster[0].HP= 450;
+        monster[0].MP= 100;
+        monster[0].ATK= 30;
+        monster[0].DEF= 20;
         break;
         
       case 2:                                                                   //monster 2 appears if random number generated is 2
         cout << "A wild XXX has appeared!" << endl;
-        monster[0].HP=;
-        monster[0].MP=;
-        monster[0].ATK=;
-        monster[0].DEF=;
-        monster[0].AVD=;
-        monster[0].CRT=;
+        monster[0].HP= 470;
+        monster[0].MP= 20;
+        monster[0].ATK= 40;
+        monster[0].DEF= 30;
         break;
         
       case 3:                                                                   //monster 3 appears if random number generated is 3
         cout << "A wild XXX has appeared!" << endl;
-        monster[0].HP=;
-        monster[0].MP=;
-        monster[0].ATK=;
-        monster[0].DEF=;
-        monster[0].AVD=;
-        monster[0].CRT=;
+        monster[0].HP= 430;
+        monster[0].MP= 60;
+        monster[0].ATK= 60;
+        monster[0].DEF= 10;
         break;
     }
     cout << "Monster HP: " << monster[0].HP << endl << "Monster MP: " << monster[0].MP << endl << "Monster Attack: " << monster[0].ATK << endl << "Monster Defense: " << monster[0].DEF << endl << "Monster Avoid: " << monster[0].AVD << endl << "Monster Critical: " << monster[0].CRT << endl << "============================================" << endl;
