@@ -39,32 +39,32 @@ int main(){
         
             case 2:                                                                   //if player chooses char 2
               cout << "You have chosen the MAGE." << endl;
-              player[0].HP=350;
+              player[0].HP=250;
               player[0].MP=200;
               player[0].ATK=20;
               player[0].DEF=10;
               player[0].AVD=10;
-              player[0].CRT=15;
+              player[0].CRT=20;
               break;
         
             case 3:                                                                   //if player chooses char 3
               cout << "You have chosen the ASSASSIN." << endl;
-              player[0].HP=;
-              player[0].MP=;
-              player[0].ATK=;
-              player[0].DEF=;
-              player[0].AVD=;
-              player[0].CRT=;
+              player[0].HP=350;
+              player[0].MP=120;
+              player[0].ATK=40;
+              player[0].DEF=15;
+              player[0].AVD=20;
+              player[0].CRT=25;
               break;
         
             case 4:                                                                   //if player chooses char 4
               cout << "You have chosen the SHOOTER." << endl;
-              player[0].HP=;
-              player[0].MP=;
-              player[0].ATK=;
-              player[0].DEF=;
-              player[0].AVD=;
-              player[0].CRT=;
+              player[0].HP=300;
+              player[0].MP=130;
+              player[0].ATK=60;
+              player[0].DEF=10;
+              player[0].AVD=10;
+              player[0].CRT=20;
               break;
         
             default:
