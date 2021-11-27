@@ -7,7 +7,7 @@ Yonghyun Kwon (3035555626)
 
 Description: 
 
-Monster fight game, choose a character with certain stats: HP(health point), MP(mana), ATK(attack), DEF(defense), AVD(avoid rate), CRT(critical hit), encounter a wild monster with certain stats: HP, MP, ATK, DEF. The player can choose to fight (auto attack or use certain skills which requires MP) or flee. The player and the monster take turns to attack each other. Critical rate applied when the player attacks and avoid rate applied when the monster attacks. The player can leave during the middle of the game if he or she wants to. The data for that game will be saved in a file("Game_Status.txt). The player could load this data and use it in the next game if he or she wants to. The game ends when one side is beaten (HP <= 0).
+Monster fight game, choose a character with certain stats: HP(health point), MP(mana), ATK(attack), DEF(defense), AVD(avoid rate), CRT(critical hit), encounter a wild monster with certain stats: HP, MP, ATK, DEF. The player can choose to fight (auto attack or use certain skills which requires MP) or flee. The player and the monster take turns to attack each other. Critical rate applied when the player attacks and avoid rate applied when the monster attacks. The player can leave during the middle of the game if he or she wants to. The data for that game will be saved in a file("Game_Status.txt). The file("Game_Status.txt") will be generated once the program is executed. The player could load this data and use it in the next game if he or she wants to. The game ends when one side is beaten (HP <= 0).
 
 
 Features implemented: 
