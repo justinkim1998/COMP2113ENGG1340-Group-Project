@@ -2,7 +2,7 @@
 Members: 
 
 Seonhyeok Kim (3035549251), 
-Yong Hyun Kwon (3035555626)
+Yonghyun Kwon (3035555626)
 
 
 Description: 
