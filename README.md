@@ -1,7 +1,7 @@
 # COMP2113ENGG1340-Group13-Project
 Members: 
 
-Seonhyeok Kim (3035549251) 
+Seonhyeok Kim (3035549251), 
 Yong Hyun Kwon (3035555626)
 
 
