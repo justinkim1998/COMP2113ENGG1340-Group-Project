@@ -9,3 +9,4 @@ Features implemented:
 5. Program codes in multiple files: Player's action and monster's action in another .cpp and .h file. Use Makefile to call the multiple files together.
 No non-standard C/C++ libraries included.
 Compilation and execution instructions ('Quick start' of the game): 
+First, choose whether to use the previous game status or not. If there is no previous game status, then the program will terminate. Then, choose the character that you want. After you have chosen your character, a random monster will be generated. Use skills and auto attacks to defeate the monster. If you win the monster, the program will output victory. However, if you lose, the program will output defeat.
