@@ -211,9 +211,9 @@ int main(){
         cout << "Remaining player HP: " << player[0].HP << endl << "Remaining player MP: " << player[0].MP << endl << endl;
         cout << "Remaining monster HP: " << monster[0].HP << endl << "Remaining monster MP: " << monster[0].MP << endl;
         cout << "============================================" << endl;
-	    cout << "Do you want to continue the game? [Y/N] ";
+	cout << "Do you want to continue the game? [Y/N] ";
         cin >> select;
-	    cout << "============================================" << endl;
+	cout << "============================================" << endl;
 
 
         if (select == 'N' || select == 'n'){            //terminate game if player wants to stop playing game
